@@ -22,6 +22,7 @@
 from calculator.lexer import MathLexer
 from calculator.parser import MathParser
 from calculator.interpreter import MathInterpreter
+from calculator.compiler import MathCompiler
 
 ################################### CLASSES ####################################
 
