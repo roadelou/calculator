@@ -1,0 +1,19 @@
+################################### METADATA ###################################
+
+# Contributors: roadelou
+# Contacts: 
+# Creation Date: 2021-03-06
+# Language: Gitignore file
+
+##################################### BODY #####################################
+
+# Ignoring python cache
+__pycache__
+# Ignoring pip ditributable
+*.egg-info
+# Ignoring vim swap
+*.swp
+# Ignoring tox cache
+.tox
+
+##################################### EOF ######################################
