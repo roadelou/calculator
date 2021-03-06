@@ -98,7 +98,7 @@ def run_repl(output: Optional[str], compiler_mode: bool):
         except EOFError:
             # End of the repl loop.
             # Need one more newline for the style.
-            print("\n", file=output_file)
+            print("\n")
             break
         # Lexing the input.
         tokens = lexer.tokenize(user_input)
