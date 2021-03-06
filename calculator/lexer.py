@@ -52,7 +52,7 @@ class MathLexer(Lexer):
     @_(r"\n+")
     def t_newline(self, token):
         # We increase the line count for each line matched.
-        token.lexer.lineno += len(token.value)
+        self.lineno += len(token.value)
 
     # Error handling rule, as advised by the documentation.
     def t_error(self, token):
