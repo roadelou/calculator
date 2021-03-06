@@ -3,26 +3,27 @@
 ################################### METADATA ###################################
 
 # Contributors: roadelou
-# Contacts: 
+# Contacts:
 # Creation Date: 2021-03-06
 # Language: Python3
 
 ################################### IMPORTS ####################################
 
-# Standard library 
-# Your imports from the standard library go here 
+# Standard library
+# Your imports from the standard library go here
 
 
-# External imports 
-# Your imports from other packages go here 
+# External imports
+# Your imports from other packages go here
 
 
-# Internal imports 
-from calculator.ast.node import Node    # Used for composition
-from calculator.ast.number import Node    # Used for downcast
-from calculator.ast.expression import Node    # Used for downcast
+# Internal imports
+from calculator.ast.node import Node  # Used for composition
+from calculator.ast.number import Node  # Used for downcast
+from calculator.ast.expression import Node  # Used for downcast
 
 ################################### CLASSES ####################################
+
 
 class Tree:
     """
@@ -47,9 +48,10 @@ class Tree:
         # We print the nodes recursively.
         return str(self.head)
 
+
 ################################## FUNCTIONS ###################################
 
-# Your functions go here 
+# Your functions go here
 
 ##################################### MAIN #####################################
 

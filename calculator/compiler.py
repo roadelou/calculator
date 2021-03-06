@@ -3,24 +3,25 @@
 ################################### METADATA ###################################
 
 # Contributors: roadelou
-# Contacts: 
+# Contacts:
 # Creation Date: 2021-03-06
 # Language: Python3
 
 ################################### IMPORTS ####################################
 
-# Standard library 
-from typing import Tuple    # Used for type hints.
+# Standard library
+from typing import Tuple  # Used for type hints.
 
 
-# External imports 
-# Your imports from other packages go here 
+# External imports
+# Your imports from other packages go here
 
 
-# Internal imports 
-from calculator.ast import Tree, Node, Number, Expression   # Used for downcasts.
+# Internal imports
+from calculator.ast import Tree, Node, Number, Expression  # Used for downcasts.
 
 ################################### CLASSES ####################################
+
 
 class MathCompiler:
     """
@@ -60,9 +61,7 @@ class MathCompiler:
         source_code = ""
         # We first have to include stdio.h for printf.
         source_code += (
-            "// Including stdio.h for printf.\n"
-            "#include <stdio.h>\n"
-            "\n\n"
+            "// Including stdio.h for printf.\n" "#include <stdio.h>\n" "\n\n"
         )
         # We open the main function.
         source_code += (
@@ -79,14 +78,11 @@ class MathCompiler:
         source_code += (
             "\n"
             "\t// Printing the result of the computation.\n"
-            f"\treturn printf(\"Final Result: %f\\n\", {last_result_name});\n"
+            f'\treturn printf("Final Result: %f\\n", {last_result_name});\n'
             "\n"
         )
         # Closing the main function.
-        source_code += (
-            "}\n"
-            "// EOF\n"
-        )
+        source_code += "}\n" "// EOF\n"
         # Returning the expected source code.
         return source_code
 
@@ -109,9 +105,7 @@ class MathCompiler:
             # Base case. We first need a name for our variable.
             name = self.new_name()
             # We build the (indented) snippet for the creation of the variable.
-            snippet = (
-                f"\tconst float {name} = {node.symbol};\n"
-            )
+            snippet = f"\tconst float {name} = {node.symbol};\n"
             # We return the two expected values.
             return name, snippet
         else:
@@ -132,7 +126,7 @@ class MathCompiler:
 
 ################################## FUNCTIONS ###################################
 
-# Your functions go here 
+# Your functions go here
 
 ##################################### MAIN #####################################
 

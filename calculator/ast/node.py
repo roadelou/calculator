@@ -3,24 +3,25 @@
 ################################### METADATA ###################################
 
 # Contributors: roadelou
-# Contacts: 
+# Contacts:
 # Creation Date: 2021-03-06
 # Language: Python3
 
 ################################### IMPORTS ####################################
 
-# Standard library 
-# Your imports from the standard library go here 
+# Standard library
+# Your imports from the standard library go here
 
 
-# External imports 
-# Your imports from other packages go here 
+# External imports
+# Your imports from other packages go here
 
 
-# Internal imports 
-# Your imports within this package go here 
+# Internal imports
+# Your imports within this package go here
 
 ################################### CLASSES ####################################
+
 
 class Node:
     """
@@ -38,9 +39,10 @@ class Node:
         # Storing the argument values.
         self.symbol = symbol
 
+
 ################################## FUNCTIONS ###################################
 
-# Your functions go here 
+# Your functions go here
 
 ##################################### MAIN #####################################
 

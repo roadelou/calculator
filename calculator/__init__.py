@@ -3,21 +3,21 @@
 ################################### METADATA ###################################
 
 # Contributors: roadelou
-# Contacts: 
+# Contacts:
 # Creation Date: 2021-03-05
 # Language: Python3
 
 ################################### IMPORTS ####################################
 
-# Standard library 
-# Your imports from the standard library go here 
+# Standard library
+# Your imports from the standard library go here
 
 
-# External imports 
-# Your imports from other packages go here 
+# External imports
+# Your imports from other packages go here
 
 
-# Internal imports 
+# Internal imports
 # Using this file as a proxy.
 from calculator.lexer import MathLexer
 from calculator.parser import MathParser
@@ -26,11 +26,11 @@ from calculator.compiler import MathCompiler
 
 ################################### CLASSES ####################################
 
-# Your classes go here 
+# Your classes go here
 
 ################################## FUNCTIONS ###################################
 
-# Your functions go here 
+# Your functions go here
 
 ##################################### MAIN #####################################
 

@@ -3,31 +3,33 @@
 ################################### METADATA ###################################
 
 # Contributors: roadelou
-# Contacts: 
+# Contacts:
 # Creation Date: 2021-03-05
 # Language: Python3
 
 ################################### IMPORTS ####################################
 
-# Standard library 
-# Your imports from the standard library go here 
+# Standard library
+# Your imports from the standard library go here
 
 
-# External imports 
-# Your imports from other packages go here 
+# External imports
+# Your imports from other packages go here
 
 
-# Internal imports 
-from calculator.ast import Tree, Node, Number, Expression   # Used for downcasts.
+# Internal imports
+from calculator.ast import Tree, Node, Number, Expression  # Used for downcasts.
 
 ################################### CLASSES ####################################
+
 
 class MathInterpreter:
     """
     Simple interpreter for the mathematical expressions we have built.
     """
+
     # Constructor is the same as Object for now.
-    
+
     def run(self, ast: Tree) -> float:
         """
         Performs the computation described by the provided AST and returns its
@@ -45,7 +47,9 @@ class MathInterpreter:
         # from its head.
         return recursive_run(ast.head)
 
+
 ################################## FUNCTIONS ###################################
+
 
 def recursive_run(node: Node) -> float:
     """
@@ -64,7 +68,7 @@ def recursive_run(node: Node) -> float:
     if isinstance(node, Number):
         # The node is just a number, we may return it.
         return node.value
-    else:   # isinstance(node, Expression)
+    else:  # isinstance(node, Expression)
         # The node is an expression, we have to recursively compute the left and
         # right side of the expression.
         left_side = recursive_run(node.left_child)
@@ -79,6 +83,7 @@ def recursive_run(node: Node) -> float:
             return left_side * right_side
         elif node.symbol == "/":
             return left_side / right_side
+
 
 ##################################### MAIN #####################################
 

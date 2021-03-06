@@ -3,25 +3,32 @@
 ################################### METADATA ###################################
 
 # Contributors: roadelou
-# Contacts: 
+# Contacts:
 # Creation Date: 2021-03-05
 # Language: Python3
 
 ################################### IMPORTS ####################################
 
-# Standard library 
-# Your imports from the standard library go here 
+# Standard library
+# Your imports from the standard library go here
 
 
-# External imports 
+# External imports
 from sly import Parser  # USed to build the parser for inheritance.
 
 
-# Internal imports 
-from calculator.lexer import MathLexer # Used to get the static tokens from the class.
-from calculator.ast import Tree, Expression, Number # Used to build the abtract syntax tree.
+# Internal imports
+from calculator.lexer import (
+    MathLexer,
+)  # Used to get the static tokens from the class.
+from calculator.ast import (
+    Tree,
+    Expression,
+    Number,
+)  # Used to build the abtract syntax tree.
 
 ################################### CLASSES ####################################
+
 
 class MathParser(Parser):
     """
@@ -82,9 +89,10 @@ class MathParser(Parser):
         # Building a leaf for the AST.
         return Number(p.NUMBER)
 
+
 ################################## FUNCTIONS ###################################
 
-# Your functions go here 
+# Your functions go here
 
 ##################################### MAIN #####################################
 

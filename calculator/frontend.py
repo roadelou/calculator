@@ -3,33 +3,34 @@
 ################################### METADATA ###################################
 
 # Contributors: roadelou
-# Contacts: 
+# Contacts:
 # Creation Date: 2021-03-06
 # Language: Python3
 
 ################################### IMPORTS ####################################
 
-# Standard library 
-from typing import Optional # Used for type hints
-import argparse # Used for the cli interface
+# Standard library
+from typing import Optional  # Used for type hints
+import argparse  # Used for the cli interface
 import sys  # Used for stdout
 
 
-# External imports 
-# Your imports from other packages go here 
+# External imports
+# Your imports from other packages go here
 
 
-# Internal imports 
+# Internal imports
 from calculator.lexer import MathLexer  # Used for the execution
-from calculator.parser import MathParser    # Used for the execution
+from calculator.parser import MathParser  # Used for the execution
 from calculator.interpreter import MathInterpreter  # Used for the execution
 from calculator.compiler import MathCompiler  # Used for the execution
 
 ################################### CLASSES ####################################
 
-# Your classes go here 
+# Your classes go here
 
 ################################## FUNCTIONS ###################################
+
 
 def main():
     """
@@ -43,9 +44,14 @@ def main():
     # - If the source code was provided, we execute it and print the result.
     # - Else we go to the repl.
     if arguments.source == "-":
-        run_repl(output = arguments.output, compiler_mode=arguments.compiler)
+        run_repl(output=arguments.output, compiler_mode=arguments.compiler)
     else:
-        run_from_source(arguments.source, output = arguments.output, compiler_mode=arguments.compiler)
+        run_from_source(
+            arguments.source,
+            output=arguments.output,
+            compiler_mode=arguments.compiler,
+        )
+
 
 def build_frontend_parser() -> argparse.ArgumentParser:
     """
@@ -57,13 +63,20 @@ def build_frontend_parser() -> argparse.ArgumentParser:
         "source", type=str, help="The source file to execute or compile"
     )
     cli_parser.add_argument(
-        "-o", "--output", type=str, default=None, help="The file to write the output to. Default is stdout."
+        "-o",
+        "--output",
+        type=str,
+        default=None,
+        help="The file to write the output to. Default is stdout.",
     )
     cli_parser.add_argument(
-        "--compiler", action="store_true", help="Whether the compiler should be used. Default is interpreter."
+        "--compiler",
+        action="store_true",
+        help="Whether the compiler should be used. Default is interpreter.",
     )
     # Returning the built parser.
     return cli_parser
+
 
 def run_repl(output: Optional[str], compiler_mode: bool):
     """
@@ -117,8 +130,9 @@ def run_repl(output: Optional[str], compiler_mode: bool):
         output_file.close()
 
 
-
-def run_from_source(source_code_path: str, output: Optional[str], compiler_mode: bool):
+def run_from_source(
+    source_code_path: str, output: Optional[str], compiler_mode: bool
+):
     """
     Runs the provided source code with the interpreter or the compiler.
 
@@ -150,13 +164,14 @@ def run_from_source(source_code_path: str, output: Optional[str], compiler_mode:
         result = compiler.codegen(ast)
     else:
         result = interpreter.run(ast)
-    
+
     # We print the result to the desired location.
     if output is None:
         print(result)
     else:
         with open(output, "w") as output_file:
             output_file.write(result)
+
 
 ##################################### MAIN #####################################
 
