@@ -79,7 +79,7 @@ class MathCompiler:
         source_code += (
             "\n"
             "\t// Printing the result of the computation.\n"
-            "\treturn printf(\"Final Result: %f\\n\", {last_result_name});\n"
+            f"\treturn printf(\"Final Result: %f\\n\", {last_result_name});\n"
             "\n"
         )
         # Closing the main function.
